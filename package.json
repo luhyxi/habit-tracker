@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "tsx src/server.ts"
+		"dev": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts"
 	},
 	"keywords": [],
 	"author": "",
@@ -14,6 +14,7 @@
 		"@tsconfig/node24": "^24.0.1",
 		"@types/node": "^24.0.15",
 		"drizzle-kit": "^0.31.4",
+		"fastify-decorators": "^3.16.1",
 		"ts-node": "^10.9.2",
 		"tsx": "^4.20.3",
 		"typescript": "^5.8.3"

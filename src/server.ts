@@ -6,6 +6,7 @@ import {
 	type ZodTypeProvider,
 } from "fastify-type-provider-zod";
 import { env } from "./env.ts";
+import { registerRoutes } from "./http/routes/habits/index.ts";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -15,6 +16,8 @@ app.register(fastifyCors, {
 
 app.setSerializerCompiler(serializerCompiler);
 app.setValidatorCompiler(validatorCompiler);
+
+app.register(registerRoutes);
 
 app.get("/health", (req, res) => {
 	return "OK";
